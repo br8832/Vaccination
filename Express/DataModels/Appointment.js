@@ -3,7 +3,7 @@ let AppointmentSchema = new schemaObj({
     user: {},
     hospital: {},
     vaccine: {},
-    date: {type: String},
+    date: Date,
     },
 {versionKey: false //just do false 
 });

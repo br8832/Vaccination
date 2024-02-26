@@ -1,26 +1,24 @@
 const express = require('express');
-const port = 9090;
+const port = 9000;
 const app = express(); 
+//need a public api
 const cors = require("cors");
-const router = require('./route/router');
-const vaccineRouter = require('./route/vaccineRouter');
-const hospitalRouter = require('./route/hospitalRouter');
-const userRouter = require('./route/userRouter');
-const appointmentRouter = require('./route/appointmentRouter');
-
+app.use(cors()); 
+// routes
+const vaccineRouter = require('./Router/vaccine-route');
+const hospitalRouter = require('./Router/hospital-route');
+const userRouter = require('./Router/user-route');
+const appointmentRouter = require('./Router/appointment-route');
 const vaccineApp = express();
 const hospitalApp = express();
 const userApp = express();
 const appointmentApp = express();
 
-app.use(cors()); //cors - middleware is passed in express application to api's being public at global level, make all api's public
-app.use(express.json({limit:'2mb', extended:false})); //json middle-ware for setting request content type
-
-app.use('/static', express.static('public')); // serve static files like images css using static middle ware
-
+//set request type to json
+app.use(express.json({limit:'2mb', extended:false})); 
 app.use('/vaccine', vaccineApp);
 vaccineApp.use('/', vaccineRouter);
-
+// set up the routes
 app.use('/hospital', hospitalApp);
 hospitalApp.use('/', hospitalRouter);
 
@@ -30,7 +28,6 @@ userApp.use('/', userRouter);
 app.use('/appointment', appointmentApp);
 appointmentApp.use('/', appointmentRouter);
 
-app.use('/', router); // all the requests coming to express app are routed to router.js
 
-console.log(`we are listening on port ${port} with url http://localhost:9090`)
+console.log(`we are listening on port ${port} with url http://localhost:${port}`)
 app.listen(port)
