@@ -14,7 +14,6 @@ let Header = (props) => {
         console.log(Reducer)
         dispatch(signOutUser());
         navigate('/user');
-        console.log(Reducer)
         e.preventDefault()
     }
 

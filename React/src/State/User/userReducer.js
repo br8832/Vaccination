@@ -3,17 +3,17 @@ import * as ActionTypes from "../actionTypes";
 const INITIAL_STATE = {
     users: [],
     user : {
-        name : "user name",
-        password : "user password",
-        age : 0,
-        profession : "user profession",
-        contact : 0,
-        address: "user address",
-        gender: "user gender",
-        disease: "user disease",
-        medicalCert: "user medicalCert",
-        _id: "Object@185r0f482ht2400bwb",
-    }
+        _id: "65de060370d3956f779e438a",
+        name: "Admin",
+        password: "password",
+        age: 20,
+        profession: "profession",
+        contact: 8181234567,
+        address: "Earth",
+        gender: "Male",
+        disease: "COVID",
+        medicalCert: "None"
+      }
 }
 
 export default function UserReducer (state = INITIAL_STATE, action) {
@@ -22,10 +22,21 @@ export default function UserReducer (state = INITIAL_STATE, action) {
             return {...state, users : action.payload.users}
         
         case ActionTypes.SIGNIN:
+            console.log("made it here")
             return {...state, user: action.payload.user}
 
         case ActionTypes.SIGNOUT :
-            return INITIAL_STATE;
+            return {...state, user:{name : "",
+            password : "",
+            age : 0,
+            profession : "",
+            contact : 0,
+            address: "",
+            gender: "",
+            disease: "",
+            medicalCert: "",
+            _id: "",
+            paid: false}};
 
         default:
             return state;

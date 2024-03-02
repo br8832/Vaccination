@@ -1,6 +1,6 @@
 import * as ActionTypes from "../actionTypes";
-import axios from 'axios'
-export const addHospital = (hospitals)=>({
+import axios from 'axios';
+export const addHospitals = (hospitals)=>({
     type:ActionTypes.ADDHOSPITALS, payload:{hospitals}
 })
 export const addCharge = (hospitals,id)=>({
@@ -14,18 +14,18 @@ export const saveHospital = (hospital)=>{
         .catch(e=>console.log(e.data))
     }
 }
-// implement updateCharge in Express API
-export const updateCharge =(id, charges)=>{
-    return function(dispatch){
-        axios.post("http://localhost:9000/hospital/update",{id,charges})
-        .then(()=>dispatch(getAll()))
-        .catch(e=>console.log(e.data))
-    }
-}
+// // implement updateCharge in Express API
+// export const updateCharge =(id, charges)=>{
+//     return function(dispatch){
+//         axios.post("http://localhost:9000/hospital/update",{id,charges})
+//         .then(()=>dispatch(getAll()))
+//         .catch(e=>console.log(e.data))
+//     }
+// }
 export const getAll=()=>{
     return function (dispatch){
         axios.get("http://localhost:9000/hospital/get")
-        .then((hospitals)=>dispatch(addHospital(hospitals.data)))
+        .then((hospitals)=>dispatch(addHospitals(hospitals.data)))
         .catch(e=>console.log(e.data))
     }
 }

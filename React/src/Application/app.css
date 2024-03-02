@@ -112,7 +112,7 @@ dfn {
 h1 {
   font-size: 2em;
   margin: 0.67em 0; 
-  color:#2ecc40}
+  color:#fec340}
 
 /**
  * Address styling not present in IE 8/9.
@@ -3228,3 +3228,16 @@ select.stack {
   margin-bottom: 0.1rem;
   color: white
 }
+.footer > a:hover {
+  background-color: salmon;
+  color: black;
+  cursor:all-scroll;
+}
+.user{
+  border: 1px solid rgb(153, 117, 51);
+  margin: 20px;
+  }
+.appointment{
+  border : solid black 1px;
+  margin: 10px;
+  padding: 10px}

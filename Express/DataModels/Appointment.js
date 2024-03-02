@@ -4,6 +4,7 @@ let AppointmentSchema = new schemaObj({
     hospital: {},
     vaccine: {},
     date: Date,
+    paid: Boolean
     },
 {versionKey: false //just do false 
 });
