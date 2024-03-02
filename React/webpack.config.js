@@ -14,7 +14,9 @@ config = {
     },
     // Rules  babel-loaderof how webpack will take our files, complie & bundle them for the browser 
     module: {
+         
         rules: [
+            { test: /qrcode/, loader: 'exports-loader?QRCode' },
             {
                 test: /\.(js|jsx)$/,
                 exclude: /nodeModules/,

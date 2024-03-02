@@ -14,9 +14,9 @@ let AppointmentComponent = ({appointment,parent}) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     //has it passed the scheduledDate
-    const handleClick = (app) => {
-        dispatch(updateAppointmentPaid(app._id));
-        navigate('/payment');
+    const handleClick = () => {
+        dispatch(updateAppointmentPaid(appointment._id));
+        navigate('/payment',{state: appointment});
     }
     return (
         <>
@@ -36,7 +36,7 @@ let AppointmentComponent = ({appointment,parent}) => {
                     </thead>
                     <tbody>
                     <tr>
-                        <td>{patient.name}</td>
+                        <td><b style={{color:"purple"}}>{patient.name}</b></td>
                         <td>{hospital.name}</td>
                         <td>{readableDate.toLocaleString()}</td>
                         <td>{hospital.address}</td>
@@ -47,8 +47,13 @@ let AppointmentComponent = ({appointment,parent}) => {
                     </tr>
                     </tbody>
                 </table>
-                <br/>
-               
+                { parent=="User" && !appointment.paid ? 
+                <Fragment>
+                <h3>{`Total Charges: $${Total}`}</h3>
+                <button onClick={() => handleClick()}>Pay Charges</button>
+                </Fragment>
+            : <strong>Charges have been paid</strong>}
+            <br/>
                 </Fragment>
             : <p>Patient has been successfully vaccinated with <b>{vaccine.name}</b> on {readableDate.toLocaleString()}</p>
             }

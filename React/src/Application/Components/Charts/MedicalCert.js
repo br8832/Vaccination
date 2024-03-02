@@ -13,8 +13,6 @@ const MedicalCert = () => {
 
     const medicalCertUsers = users.filter((user) => "none".localeCompare(user.medicalCert,'en',{sensitivity:"base"})!=0 && user.medicalCert !== 'N/A');
     const nonMedicalCertUsers = users.filter((user) => user.medicalCert == 'none' || user.medicalCert == 'None' || user.medicalCert == 'N/A');
-    console.log(medicalCertUsers, nonMedicalCertUsers)
-
 const data = [
     {
     type: 'Possesses a Medical Certification',
@@ -45,7 +43,7 @@ const config = {
     },
     ],
 };
-console.log(config)
+//console.log(config)
 return (
     <>
     <h3>Medical Certification Pie Chart</h3>

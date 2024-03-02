@@ -10,7 +10,7 @@ const Age = () => {
         dispatch(getAll());
     }, [])
 
-    console.log("users: ", users);
+    //console.log("users: ", users);
     const usersUnder16 = users.filter((user) => user.age < 16);
     const users16To25 = users.filter((user) => user.age > 16 && user.age < 26);
     const users26To50 = users.filter((user) => user.age > 25 && user.age < 50);

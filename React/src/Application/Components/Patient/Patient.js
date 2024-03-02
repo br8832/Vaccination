@@ -6,6 +6,8 @@ import Gender from "../Charts/Gender";
 import Disease from "../Charts/Disease";
 import MedicalCert from "../Charts/MedicalCert";
 import { getAll } from "../../../State/User/userAction";
+import PoplationCovered from "../Charts/PopulationCovered";
+import DosesByDay from "../Charts/DosesByMonth";
 
 export default function Patient(){
     const user = useSelector((state) => state.UserReducer.user);
@@ -18,14 +20,16 @@ export default function Patient(){
             {console.log(user)}
             { user&&user.name !== "" ?
             <Fragment>
+                <hr/>
                 <NavLink to="/userAppointments" className="button">My Appointments</NavLink>
-                <hr/>
+                
                 <h1>{"Patient Statistics"}</h1>
-                <hr/>
                 <Age/>
                 <Gender/>
                 <Disease/>
                 <MedicalCert/>
+                <PoplationCovered/>
+                <DosesByDay month={2}/>
             </Fragment>
             : 
             <p>Please login to see these features</p>
