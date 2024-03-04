@@ -29,7 +29,7 @@ export default function Patient(){
                 <Disease/>
                 <MedicalCert/>
                 <PoplationCovered/>
-                <DosesByDay month={2}/>
+                <DosesByDay month={new Date().getMonth()}/>
             </Fragment>
             : 
             <p>Please login to see these features</p>

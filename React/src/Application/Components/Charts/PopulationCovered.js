@@ -4,7 +4,7 @@ import { getAll } from '../../../State/User/userAction';
 import { useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 const PoplationCovered = () => {
-    const totalPop = 90000000000
+    const totalPop = 8.1E9
     const users = useSelector((state) => state.UserReducer.users);
     const dispatch = useDispatch();
 

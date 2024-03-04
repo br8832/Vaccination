@@ -12,7 +12,7 @@ const DosesByMonth = ({month}) =>{
         dispatch(getAll());
     }, [])
     let data = appointments.filter((a)=>new Date(a.date).getMonth()==month)
-    .map(a=>{ return {doses:a.vaccine.doses, day:new Date(a.date).getDate()}})
+    .map(a=>{ return {doses:a.vaccine.doses, day:new Date(a.date).getDate()-0.5}})
     console.log(data)
     const config = {
         data,
