@@ -19,25 +19,9 @@ let UserAppointments = () => {
         dispatch(getAllU())
     }, [])
     //console.log(appointmentsList, user, hospitals)
+    //console.log(JSON.stringify(appointmentsList))
     const userAppointments = appointmentsList.filter((appointment) => appointment.user.name === user.name);
-    //console.log(userAppointments)
-
-    // for(let i = 0; i < userAppointments.length; i++) {
-    //     if (i < 1) {
-    //         hospitalName = userAppointments[i].hospital.name;
-    //         hospitalId = userAppointments[i].hospital._id;
-    //         charges = userAppointments[i].hospital.charges;
-    //     }
-    // }
-    
-    // for (var i = 0; i < userAppointments.length; i++) {
-    //     var subTotal = userAppointments[i].vaccine.price;
-    //     total += subTotal;
-    // }
-
-    // console.log("hospitalName: ", hospitalName);
-    // console.log("hospitalId: ", hospitalId);
-    // console.log("hospitals: ", hospitals);
+   
 
 // Instead of <></> use <Fragment></Fragment>
     return (

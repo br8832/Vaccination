@@ -18,7 +18,11 @@ export const getAll = () =>{
 export const updateAppointmentPaid = (id) =>{
     return function(dispatch){
         axios.post(`http://localhost:9000/appointment/update`,{id:id})
+        .then(()=>{
+            axios.get("http://localhost:9000/appointment/get")
         .then((apps)=>dispatch(addApointment(apps.data)))
+        .catch(e=>console.log(e))
+        })
         .catch(e=>console.log(e))
     }
 }

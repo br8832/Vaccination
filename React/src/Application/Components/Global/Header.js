@@ -19,6 +19,7 @@ let Header = (props) => {
 
     return (
         <>
+        
             <h1>Vaccination Application</h1>
             <NavLink to="/admin" className="button" activeclassname="success">Admin Section</NavLink>
             <NavLink to="/patient" className="button" activeclassname="success">Patient Section</NavLink>

@@ -46,7 +46,7 @@ const config = {
 return (
     <>
     <h3>Population Covered Pie Chart</h3>
-    <Pie {...config} />;
+    <Pie {...config} />
     </>
     )
 }

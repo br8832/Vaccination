@@ -16,7 +16,6 @@ config = {
     module: {
          
         rules: [
-            { test: /qrcode/, loader: 'exports-loader?QRCode' },
             {
                 test: /\.(js|jsx)$/,
                 exclude: /nodeModules/,

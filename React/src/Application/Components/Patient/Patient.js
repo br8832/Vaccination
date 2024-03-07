@@ -1,13 +1,14 @@
 import React, {Fragment,useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
+import { getAll } from "../../../State/User/userAction";
 import Age from "../Charts/Age";
 import Gender from "../Charts/Gender";
 import Disease from "../Charts/Disease";
 import MedicalCert from "../Charts/MedicalCert";
-import { getAll } from "../../../State/User/userAction";
 import PoplationCovered from "../Charts/PopulationCovered";
 import DosesByDay from "../Charts/DosesByMonth";
+import MySlider from "../Global/MySlider";
 
 export default function Patient(){
     const user = useSelector((state) => state.UserReducer.user);
@@ -24,12 +25,13 @@ export default function Patient(){
                 <NavLink to="/userAppointments" className="button">My Appointments</NavLink>
                 
                 <h1>{"Patient Statistics"}</h1>
-                <Age/>
+                <MySlider/>
+                {/* <Age/>
                 <Gender/>
                 <Disease/>
                 <MedicalCert/>
                 <PoplationCovered/>
-                <DosesByDay month={new Date().getMonth()}/>
+                <DosesByDay month={new Date().getMonth()}/> */}
             </Fragment>
             : 
             <p>Please login to see these features</p>

@@ -112,7 +112,7 @@ let Register = (props)=>{
                 </div> 
             </div> 
         </div>  */}
-            <h1>Login Page</h1><p style={{"font-size": "2em","margin": "0.67em 0", color:"#fec340"}}>{user.gender?"":"Please seperate by comma"}</p>
+            <h1>Login Page</h1><p style={{"fontSize": "2em","margin": "0.67em 0", color:"#fec340"}}>{user.gender?"":"Please seperate by comma"}</p>
             <form className={"form col-md-10 user"} onSubmit={submit}>                
                 <label>
                     <b>Name :</b>

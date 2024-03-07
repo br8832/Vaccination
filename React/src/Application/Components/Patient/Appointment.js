@@ -20,7 +20,7 @@ let AppointmentComponent = ({appointment,parent}) => {
     }
     return (
         <>
-            { parent=="Admin"|| timeElaspsed < 0 ? <Fragment>
+            { parent=="Admin"|| (parent!="Admin" && timeElaspsed < 0) ? <Fragment>
                 <table>
                     <thead>
                     <tr>

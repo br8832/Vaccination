@@ -13,7 +13,7 @@ export default function AppointmentReducer(state = INITIAL_STATE, action) {
     switch(action.type) {
         case ActionTypes.ADDAPPOINTMENTS:
             return {...state, appointments: action.payload.appointments}
-        default:
+            default:
             return state;
     }
 }

@@ -46,7 +46,7 @@ const config = {
 return (
     <>
     <h3>Disease Pie Chart</h3>
-    <Pie {...config} />;
+    <Pie {...config} />
     </>
     )
 };
